@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ВБИ - Гойда</title>
+    <style>
+        body {
+            background: url('vbi_flag.png') no-repeat center center fixed;
+            background-size: cover;
+            background-color: #d46a6a;
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+        }
+        .overlay {
+            background-color: rgba(255, 255, 255, 0.8);
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 1;
+        }
+        .content {
+            position: relative;
+            z-index: 2;
+        }
+        .button {
+            display: inline-block;
+            background-color: black;
+            color: white;
+            padding: 10px 20px;
+            margin: 10px;
+            border: 2px solid white;
+            border-radius: 20px;
+            text-decoration: none;
+            font-size: 18px;
+        }
+        .button:hover {
+            background-color: #555;
+        }
+        .container {
+            margin-top: 20px;
+        }
+        .footer {
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+            margin-top: 20px;
+            padding: 10px;
+            background-color: rgba(255, 0, 0, 0.8);
+            position: relative;
+            z-index: 2;
+        }
+        .footer img {
+            width: 100px;
+            height: 100px;
+            margin-right: 10px;
+        }
+        .footer-text {
+            font-size: 18px;
+            color: black;
+        }
+        .counter-text {
+            font-family: Arial, sans-serif;
+            text-align: center;
+	}
+    </style>
+    <script>
+        // Функция для воспроизведения звука
+        function playSound() {
+            var audio = new Audio('goida_bass.mp3'); // Убедитесь, что путь правильный
+            audio.play().catch(function(error) {
+                console.log('Ошибка при воспроизведении звука: ', error);
+            });
+        }
+        // Воспроизведение звука при загрузке страницы
+        window.onload = function() {
+            playSound();
+        };
+        let count = 0;
+
+        function incrementCounter() {
+            count++;
+            document.querySelector('#counter h2').innerText = `ГОЙДА: ${count}`;
+        }
+    </script>
+</head>
+<body>
+    <div class="overlay"></div>
+    <div class="content">
+        <h1>ВБИ - ГойдаКликер</h1>
+	<div id="counter" class="counter-text"><h2>ГОЙДА: </h2></div>
+        <div class="container">
+            <a href="javascript:playSound(); incrementCounter()" class="button">ГОЙДА</a>
+	    <a href="index.html" class="button">НАЗАД</a>
+        </div>
+        <div class="footer">
+            <img src="bytik.png" alt="Footer Image">
+            <span class="footer-text">ВБИ - Великая Бутиковая Империя
+	    ГООООЙЙЙЙДАААА</span>
+        </div>
+	<div>
+	    <img src="REAL_GOIDA.PNG" style="width: 100%; height: auto;" ></img>
+	</div>
+    </div>
+</body>
+</html>
